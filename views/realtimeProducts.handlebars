@@ -1,0 +1,25 @@
+
+<h1>Lista de Productos</h1>
+<ul id="products-list">
+    {{#each payload}}
+
+    <li>{{this.title}} - ${{this.price}}</li>
+    {{/each}}
+</ul>
+
+ <h2>Agregar Producto</h2>
+<input id="productName" type="text" placeholder="Nombre del producto" required>
+<input id="productDescription" type="text" placeholder="Descripción del producto" required>
+<input id="productCode" type="text" placeholder="Código del producto" required>
+<input id="productCategory" type="text" placeholder="Categoría del producto" required>
+<input id="productStock" type="number" placeholder="Stock del producto" required>
+<input id="productPrice" type="number" placeholder="Precio del producto" required>
+<button id="addProductButton">Agregar Producto</button>
+
+<h2>Eliminar Producto</h2>
+<input id="productId" type="text" placeholder="ID del producto">
+<button id="deleteProductButton">Eliminar Producto</button>
+
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/realTimeProducts.js"></script>

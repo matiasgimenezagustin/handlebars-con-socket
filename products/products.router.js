@@ -2,6 +2,7 @@ import express from 'express'
 import { 
     deleteProductController, 
     getProductByIdController, 
+    getProductByIdTemplateController, 
     getProductsController, 
     getProductsTemplateController, 
     postProductController, 
@@ -20,6 +21,6 @@ productsRouter.delete('/:pid', deleteProductController)
 const productsPageRouter = express.Router()
 
 productsPageRouter.get('/', getProductsTemplateController)
-
+productsPageRouter.get('/:pid', getProductByIdTemplateController)
 
 export {productsRouter, productsPageRouter}

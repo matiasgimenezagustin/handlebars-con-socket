@@ -1,13 +1,24 @@
 <main>
     <h1>Lista de productos:</h1>
-    {{#each this.payload}}
+    {{#each payload}}
         <div>
             <h2>{{this.title}}</h2>
             <p>{{this.description}}</p>
             <span>Price: <b>${{this.price}}</b></span>
             <br>
             <span>Stock: {{this.stock}}</span>
+            <a href="./products/{{this.id}}">Ver detalle</a>
             <hr>
         </div>
+        
     {{/each}}
+    <div>
+        {{#if this.hasPrevPage}}
+            <a href="{{this.prevLink}}">Previo</a>
+        {{/if}}
+        <span>{{this.page}}</span>
+        {{#if this.hasNextPage}}
+            <a href="{{this.nextLink}}">Siguiente</a>
+        {{/if}}
+    </div>
 </main>

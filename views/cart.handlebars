@@ -1,0 +1,16 @@
+<main>
+    {{#each payload.products}}
+        <div>
+            <h2>{{this.productId.title}}</h2>
+            <p>{{this.productId.description}}</p>
+            <span>Price: <b>${{this.productId.price}}</b></span>
+            <br>
+            <span>Stock: {{this.productId.stock}}</span>
+            <br>
+            <span>Cantidad comprada: {{this.quantity}}</span>
+            <a href="./products/{{this.productId.id}}">Ver detalle</a>
+            <hr>
+        </div>
+        
+    {{/each}}
+</main>

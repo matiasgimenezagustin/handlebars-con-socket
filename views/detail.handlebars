@@ -1,0 +1,25 @@
+<main>
+
+    <h1>Detalle de producto:</h1>
+    
+    <div>
+        <h2>{{payload.title}}</h2>
+        <p>{{payload.description}}</p>
+        <p>Precio: <b>${{payload.price}}</b></p>
+        <p>Stock: {{payload.stock}}</p>
+        <button type="button" id="buyButton" data-id="{{payload._id}}"="">Comprar</button>
+
+        
+    </div>
+    <script> 
+        const buyButton = document.getElementById('buyButton');
+        buyButton.addEventListener('click', () => {
+            const id = buyButton.getAttribute('data-id');
+            fetch('/api/carts/6689987168467a45d122514d/product/' + id, {
+                method: 'POST'
+            }).then(() => {
+                alert('Producto agregado al carrito');
+            })
+        })
+    </script>
+</main>

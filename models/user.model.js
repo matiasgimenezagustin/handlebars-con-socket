@@ -11,7 +11,7 @@ const userSchema = new mongoose.Schema({
     role: { type: String, default: 'user' }
 });
 
-// Middleware para hashear el password antes de guardar el documento
+
 userSchema.pre('save', function (next) {
     if (!this.isModified('password')) return next();
     try {
@@ -23,7 +23,7 @@ userSchema.pre('save', function (next) {
     }
 });
 
-// Método para comparar el password ingresado con el password hasheado
+
 userSchema.methods.comparePassword = function (candidatePassword) {
     return bcrypt.compareSync(candidatePassword, this.password);
 };

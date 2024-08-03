@@ -1,8 +1,9 @@
 import conectionMongoose from "mongoose";
+import ENVIROMENT from "./enviroment.config.js";
 
 
-const url = `mongodb://localhost:27017/${process.env.DB_NAME}`;
-
+const url = `mongodb://localhost:27017/${ENVIROMENT.DB_NAME}`;
+console.log(url)
 conectionMongoose.connect(url)
 .then(
     () => {

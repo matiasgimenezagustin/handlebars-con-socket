@@ -7,7 +7,7 @@ import {
     getProductsTemplateController, 
     postProductController, 
     putProductController 
-} from './products.controller.js'
+} from '../controllers/products.controller.js'
 
 const productsRouter = express.Router()
 

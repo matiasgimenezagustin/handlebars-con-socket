@@ -1,0 +1,69 @@
+@import url(./index.css);
+@import url(./cart.css);
+@import url(./detail.css);
+@import url(./realtimeProducts.css);
+@import url(./form.css);
+/* Iconos */
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    color: var(--color-texto);
+    font-family: "Inter", sans-serif;
+    background-color: none;
+    outline: none;
+    border: none;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    align-items: center;
+}
+
+:root {
+    --color-principal: #4C3BCF;
+    --color-texto: #0E0A29;
+    --color-secundario: #6A5BD7;
+}
+
+
+header{
+    display: flex;
+    justify-content: space-between;
+    padding: 24px;
+    width: 100%;
+}
+
+header nav{
+    display: flex;
+    gap: 16px;
+}
+
+
+
+
+
+
+.icon-btn{
+    display: flex;
+    width: 40px;
+    height: 40px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 32px;
+}
+
+.icon-btn:hover{
+    background-color: var(--color-principal);
+}
+
+.icon-btn:hover i{
+    color: white;
+}

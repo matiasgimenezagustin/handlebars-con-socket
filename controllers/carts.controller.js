@@ -1,4 +1,4 @@
-import cartsManager from "./carts.manager.js";
+import cartsManager from "../managers/carts.manager.js";
 
 export const postCart = async (req, res) => {
     try {

@@ -1,17 +1,23 @@
-<main>
+<main class="detail-main">
+    <div class="product-container">
+        <img src="https://images.unsplash.com/photo-1529374255404-311a2a4f1fd9?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt="imagen de una remera" class="product-img">
+        <div class="product-inf-options">
+            <h2>{{payload.title}}</h2>
+            <p>
+                {{payload.description}}
+            </p> 
+            <span class="price-text">
+                $ <span class="price-number">{{payload.price}}</span> 
+            </span>
+            <span class="stock-text">
+                • Stock {{payload.stock}}
+            </span>
+            <button class="detail-btn" type="button" id="buyButton" data-id="{{payload._id}}">Comprar</button>
+        </div>
 
-    <h1>Detalle de producto:</h1>
-    
-    <div>
-        <h2>{{payload.title}}</h2>
-        <p>{{payload.description}}</p>
-        <p>Precio: <b>${{payload.price}}</b></p>
-        <p>Stock: {{payload.stock}}</p>
-        <button type="button" id="buyButton" data-id="{{payload._id}}"="">Comprar</button>
-
-        
     </div>
-    <script> 
+    <script>
         const buyButton = document.getElementById('buyButton');
         buyButton.addEventListener('click', () => {
             const id = buyButton.getAttribute('data-id');

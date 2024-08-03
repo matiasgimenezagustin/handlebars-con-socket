@@ -1,24 +1,30 @@
-<main>
+<main class="index-main">
     <h1>Lista de productos:</h1>
-    {{#each payload}}
-        <div>
-            <h2>{{this.title}}</h2>
-            <p>{{this.description}}</p>
-            <span>Price: <b>${{this.price}}</b></span>
-            <br>
-            <span>Stock: {{this.stock}}</span>
-            <a href="./products/{{this.id}}">Ver detalle</a>
-            <hr>
-        </div>
-        
-    {{/each}}
-    <div>
+    <div class="products-container">
+        {{#each payload}}
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1529374255404-311a2a4f1fd9?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="imagen de una remera" class="product-img">
+                
+                <div class="product-inf">
+                    <h2>{{this.title}}</h2> 
+                    <p>{{this.description}}</p> 
+                    <span class="price-text">
+                        Price: <span class="price-number">${{this.price}} </span> 
+                    </span>           
+                </div>     
+                <div class="card-btn-container">
+                    <a href="./products/{{this._id}}" class="card-btn">Ver detalle</a>
+                </div> 
+            </div>
+        {{/each}}
+    </div>
+    <div class="pagination-buttons">
         {{#if this.hasPrevPage}}
-            <a href="{{this.prevLink}}">Previo</a>
+            <a href='{{this.prevLink}}' class="icon-btn"><i class="bi bi-chevron-left"></i></a> 
         {{/if}}
-        <span>{{this.page}}</span>
+        <span class="icon-btn actual-page">{{this.page}}</span>
         {{#if this.hasNextPage}}
-            <a href="{{this.nextLink}}">Siguiente</a>
+            <a href='{{this.nextLink}}' class="icon-btn"><i class="bi bi-chevron-right"></i></a> 
         {{/if}}
     </div>
 </main>

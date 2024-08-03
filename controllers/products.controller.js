@@ -1,6 +1,7 @@
-import { products_manager } from './products.manager.js';
+import { products_manager } from '../managers/products.manager.js';
 
 export const getProductsTemplateController = async (req, res) => {
+
     try {
         const { limit, page, sort, query } = req.query;
 
@@ -32,12 +33,14 @@ export const getProductsTemplateController = async (req, res) => {
             nextLink
         });
     } catch (error) {
+        console.log(error)
         res.status(400).json({ ok: false, error: error.message });
     }
 };
 
 export const getProductsController = async (req, res) => {
     try {
+        
         const { limit, page, sort, query } = req.query;
 
         const options = {
@@ -54,7 +57,6 @@ export const getProductsController = async (req, res) => {
         const baseUrl = `${req.protocol}://${req.get('host')}${req.baseUrl}${req.path}`;
         const prevLink = hasPrevPage ? `${baseUrl}?page=${prevPage}` : null;
         const nextLink = hasNextPage ? `${baseUrl}?page=${nextPage}` : null;
-
         res.status(200).json({
             status: 'success',
             payload: products,

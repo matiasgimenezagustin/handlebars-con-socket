@@ -3,7 +3,7 @@ import ENVIROMENT from './config/enviroment.config.js'
 import express from 'express'
 
 import {productsRouter, productsPageRouter} from './routers/products.router.js'
-import cartRouter, { cartTemplateRouter } from './routers/carts.router.js'
+import cartRouter/*  { cartTemplateRouter }  */from './routers/carts.router.js'
 import sessionRouter from './routers/session.router.js'
 
 import hbs from 'express-handlebars'
@@ -53,7 +53,7 @@ app.get('/protected', passport.authenticate('jwt', { session: false }), (req, re
 app.use('/products', productsPageRouter)
 app.use('/api/products', productsRouter)
 app.use('/api/carts', cartRouter)
-app.use('/cart', cartTemplateRouter)
+/* app.use('/cart', cartTemplateRouter) */
 app.use('/api/sessions', sessionRouter)
 app.use('/api/auth', authRouter)
 app.use('/auth', pageAuthRouter)

@@ -3,7 +3,7 @@ import ENVIROMENT from './config/enviroment.config.js'
 import express from 'express'
 
 import {productsRouter, productsPageRouter} from './routers/products.router.js'
-import cartRouter/*  { cartTemplateRouter }  */from './routers/carts.router.js'
+import cartRouter from './routers/carts.router.js'
 import sessionRouter from './routers/session.router.js'
 
 import hbs from 'express-handlebars'

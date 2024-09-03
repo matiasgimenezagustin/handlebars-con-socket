@@ -40,8 +40,6 @@ export const loginController = (req, res, next) => {
     passport.authenticate('local', { session: false }, (err, user, info) => {
         if (err) return next(err);
         if (!user) return res.status(400).json({ message: info.message });
-
-        // Crear el token JWT
         const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET_KEY, { expiresIn: '1h' });
         res.cookie('jwt', token, { httpOnly: true, secure: true });
 

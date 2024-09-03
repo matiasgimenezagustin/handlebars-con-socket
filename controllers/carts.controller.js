@@ -132,7 +132,7 @@ export const purchaseCart = async (req, res) => {
 export const addProductToCart = async (req, res) => {
     try {
         const { cid, pid } = req.params;
-        const { quantity = 1 } = req.body; // Default quantity to 1 if not provided
+        const { quantity = 1 } = req.body; 
         const cart = await cartRepository.addProductToCart(cid, pid, quantity);
         res.status(200).json({ ok: true, payload: cart });
     } catch (error) {
